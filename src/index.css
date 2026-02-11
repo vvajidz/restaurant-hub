@@ -1,0 +1,280 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Restaurant Management System - Design System
+   Warm, professional aesthetic inspired by modern POS systems
+   All colors in HSL format
+*/
+
+@layer base {
+  :root {
+    /* Core backgrounds */
+    --background: 30 20% 98%;
+    --foreground: 20 14% 12%;
+
+    /* Cards & surfaces */
+    --card: 0 0% 100%;
+    --card-foreground: 20 14% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 14% 12%;
+
+    /* Primary - Warm Amber */
+    --primary: 0 100% 22%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Warm Gray */
+    --secondary: 30 10% 94%;
+    --secondary-foreground: 20 14% 12%;
+
+    /* Muted - Soft neutrals */
+    --muted: 30 10% 96%;
+    --muted-foreground: 20 10% 45%;
+
+    /* Accent - Lighter amber */
+    --accent: 35 91% 95%;
+    --accent-foreground: 35 91% 35%;
+
+    /* Destructive - Warm red */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Status colors */
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 45 93% 47%;
+    --warning-foreground: 20 14% 12%;
+    --info: 199 89% 48%;
+    --info-foreground: 0 0% 100%;
+
+    /* Table status colors */
+    --table-free: 142 71% 45%;
+    --table-occupied: 0 72% 51%;
+    --table-reserved: 45 93% 47%;
+
+    /* UI elements */
+    --border: 30 15% 88%;
+    --input: 30 15% 88%;
+    --ring: 35 91% 50%;
+
+    --radius: 0.75rem;
+
+    /* Sidebar - Warm dark */
+    --sidebar-background: 20 20% 10%;
+    --sidebar-foreground: 30 20% 90%;
+    --sidebar-primary: 35 91% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 20 15% 18%;
+    --sidebar-accent-foreground: 30 20% 90%;
+    --sidebar-border: 20 15% 20%;
+    --sidebar-ring: 35 91% 50%;
+
+    /* Chart colors */
+    --chart-1: 35 91% 50%;
+    --chart-2: 142 71% 45%;
+    --chart-3: 199 89% 48%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 0 72% 51%;
+
+    /* Gradients */
+    --gradient-warm: linear-gradient(135deg, hsl(35 91% 50%) 0%, hsl(25 95% 45%) 100%);
+    --gradient-success: linear-gradient(135deg, hsl(142 71% 45%) 0%, hsl(160 60% 40%) 100%);
+    --gradient-sidebar: linear-gradient(180deg, hsl(20 20% 12%) 0%, hsl(20 20% 8%) 100%);
+    --sidebar: 248 0.3% 98.4%;
+    --font-sans: Poppins, ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    --font-serif: "Playfair Display", ui-serif, Georgia, Cambria, Times New Roman, Times, serif;
+    --font-mono: "Space Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+    --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+    --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+    --shadow-sm: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+    --shadow: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+    --shadow-md: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.1);
+    --shadow-lg: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 4px 6px -1px hsl(0 0% 0% / 0.1);
+    --shadow-xl: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 8px 10px -1px hsl(0 0% 0% / 0.1);
+    --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
+    --tracking-normal: 0em;
+    --spacing: 0.25rem;
+  }
+
+  .dark {
+    --background: 20 20% 8%;
+    --foreground: 30 20% 95%;
+
+    --card: 20 18% 12%;
+    --card-foreground: 30 20% 95%;
+
+    --popover: 20 18% 12%;
+    --popover-foreground: 30 20% 95%;
+
+    --primary: 35 91% 55%;
+    --primary-foreground: 20 14% 12%;
+
+    --secondary: 20 15% 18%;
+    --secondary-foreground: 30 20% 90%;
+
+    --muted: 20 15% 18%;
+    --muted-foreground: 30 15% 60%;
+
+    --accent: 35 50% 20%;
+    --accent-foreground: 35 91% 70%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 20 15% 22%;
+    --input: 20 15% 22%;
+    --ring: 35 91% 55%;
+
+    --sidebar-background: 20 25% 6%;
+    --sidebar-foreground: 30 20% 90%;
+    --sidebar-primary: 35 91% 55%;
+    --sidebar-primary-foreground: 20 14% 12%;
+    --sidebar-accent: 20 20% 14%;
+    --sidebar-accent-foreground: 30 20% 90%;
+    --sidebar-border: 20 15% 18%;
+    --sidebar-ring: 35 91% 55%;
+    --chart-1: 264 24.3% 48.8%;
+    --chart-2: 162 17% 69.6%;
+    --chart-3: 70 18.8% 76.9%;
+    --chart-4: 304 26.5% 62.7%;
+    --chart-5: 16 24.6% 64.5%;
+    --sidebar: 266 4% 20.8%;
+    --radius: 0rem;
+    --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+    --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+    --shadow-sm: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+    --shadow: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+    --shadow-md: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.1);
+    --shadow-lg: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 4px 6px -1px hsl(0 0% 0% / 0.1);
+    --shadow-xl: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 8px 10px -1px hsl(0 0% 0% / 0.1);
+    --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
+    --font-sans: Poppins, ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    --font-serif: "Playfair Display", ui-serif, Georgia, Cambria, Times New Roman, Times, serif;
+    --font-mono: "Space Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Custom scrollbar for modern look */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted/50;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/30 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
+  }
+}
+
+@layer components {
+  /* Stat card gradient backgrounds */
+  .stat-card-sales {
+    background: linear-gradient(135deg, hsl(35 91% 50% / 0.1) 0%, hsl(35 91% 50% / 0.05) 100%);
+    border-color: hsl(35 91% 50% / 0.2);
+  }
+
+  .stat-card-orders {
+    background: linear-gradient(135deg, hsl(199 89% 48% / 0.1) 0%, hsl(199 89% 48% / 0.05) 100%);
+    border-color: hsl(199 89% 48% / 0.2);
+  }
+
+  .stat-card-expenses {
+    background: linear-gradient(135deg, hsl(0 72% 51% / 0.1) 0%, hsl(0 72% 51% / 0.05) 100%);
+    border-color: hsl(0 72% 51% / 0.2);
+  }
+
+  .stat-card-balance {
+    background: linear-gradient(135deg, hsl(142 71% 45% / 0.1) 0%, hsl(142 71% 45% / 0.05) 100%);
+    border-color: hsl(142 71% 45% / 0.2);
+  }
+
+  /* Kitchen display card styles */
+  .kitchen-card {
+    @apply bg-card border-2 rounded-xl transition-all duration-300;
+  }
+
+  .kitchen-card-new {
+    @apply border-info bg-info/10;
+  }
+
+  .kitchen-card-preparing {
+    @apply border-warning bg-warning/10;
+  }
+
+  .kitchen-card-ready {
+    @apply border-success bg-success/10;
+  }
+
+  /* Table status indicators */
+  .table-free {
+    @apply bg-success/20 border-success text-success hover:bg-success/30;
+  }
+
+  .table-occupied {
+    @apply bg-destructive/20 border-destructive text-destructive hover:bg-destructive/30;
+  }
+
+  .table-reserved {
+    @apply bg-warning/20 border-warning text-warning hover:bg-warning/30;
+  }
+
+  /* POS menu item card */
+  .menu-item-card {
+    @apply bg-card border rounded-lg p-3 cursor-pointer transition-all duration-200
+           hover:border-primary hover:shadow-md hover:scale-[1.02] active:scale-[0.98];
+  }
+
+  /* Smooth page transitions */
+  .page-enter {
+    @apply opacity-0 translate-y-2;
+  }
+
+  .page-enter-active {
+    @apply opacity-100 translate-y-0 transition-all duration-300;
+  }
+}
+
+@layer utilities {
+  /* Glass morphism effect */
+  .glass {
+    @apply bg-background/80 backdrop-blur-md;
+  }
+
+  /* Subtle shadow for cards */
+  .shadow-soft {
+    box-shadow: 0 2px 8px -2px hsl(20 14% 12% / 0.08),
+                0 4px 16px -4px hsl(20 14% 12% / 0.12);
+  }
+
+  /* Warm glow for primary elements */
+  .glow-primary {
+    box-shadow: 0 0 20px hsl(35 91% 50% / 0.3);
+  }
+}

@@ -24,8 +24,8 @@ const StaffLayout = () => {
   const location = useLocation();
   const { user, logout } = useAuthStore();
 
-  const handleLogout = () => {
-    logout();
+  const handleLogout = async () => {
+    await logout();
     navigate(ROUTES.LOGIN);
   };
 

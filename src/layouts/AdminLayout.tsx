@@ -37,8 +37,8 @@ const AdminLayout = () => {
   const { user, logout } = useAuthStore();
   const [collapsed, setCollapsed] = useState(false);
 
-  const handleLogout = () => {
-    logout();
+  const handleLogout = async () => {
+    await logout();
     navigate(ROUTES.LOGIN);
   };
 

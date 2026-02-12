@@ -7,8 +7,9 @@ import { ROUTES } from "@/config/urls";
 import ProtectedRoute from "@/components/ProtectedRoute";
 
 // Pages
-import Index from "./pages/Index";
+import Landing from "./pages/Landing";
 import Login from "./pages/Login";
+import Register from "./pages/Register";
 import NotFound from "./pages/NotFound";
 
 // Layouts
@@ -38,8 +39,9 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           {/* Public Routes */}
-          <Route path="/" element={<Index />} />
+          <Route path="/" element={<Landing />} />
           <Route path={ROUTES.LOGIN} element={<Login />} />
+          <Route path="/register" element={<Register />} />
 
           {/* Admin Routes */}
           <Route

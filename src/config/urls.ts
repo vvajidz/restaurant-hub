@@ -4,6 +4,11 @@ export const ROUTES = {
   // Auth
   LOGIN: '/login',
   
+  // Superadmin routes
+  SUPERADMIN: {
+    DASHBOARD: '/superadmin/dashboard',
+  },
+
   // Admin routes
   ADMIN: {
     DASHBOARD: '/admin/dashboard',
@@ -11,7 +16,6 @@ export const ROUTES = {
     REPORTS: '/admin/reports',
     SETTINGS: '/admin/settings',
   },
-  
   
   // Staff routes
   STAFF: {
@@ -23,6 +27,7 @@ export const ROUTES = {
   },
 } as const;
 
-export const getDefaultRoute = (role: 'admin' | 'staff') => {
+export const getDefaultRoute = (role: 'admin' | 'staff' | 'superadmin') => {
+  if (role === 'superadmin') return ROUTES.SUPERADMIN.DASHBOARD;
   return role === 'admin' ? ROUTES.ADMIN.DASHBOARD : ROUTES.STAFF.POS;
 };

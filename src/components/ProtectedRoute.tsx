@@ -30,9 +30,11 @@ const ProtectedRoute = ({ children, allowedRoles }: ProtectedRouteProps) => {
   }
 
   if (!allowedRoles.includes(user.role)) {
-    const redirectPath = user.role === 'admin'
-      ? ROUTES.ADMIN.DASHBOARD
-      : ROUTES.STAFF.POS;
+    const redirectPath = user.role === 'superadmin'
+      ? ROUTES.SUPERADMIN.DASHBOARD
+      : user.role === 'admin'
+        ? ROUTES.ADMIN.DASHBOARD
+        : ROUTES.STAFF.POS;
     return <Navigate to={redirectPath} replace />;
   }
 

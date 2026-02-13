@@ -67,6 +67,10 @@ export type Database = {
           staff_email: string | null
           staff_password: string | null
           staff_user_id: string | null
+          status: string
+          subscription_end: string | null
+          subscription_package_id: string | null
+          subscription_start: string | null
           updated_at: string
         }
         Insert: {
@@ -77,6 +81,10 @@ export type Database = {
           staff_email?: string | null
           staff_password?: string | null
           staff_user_id?: string | null
+          status?: string
+          subscription_end?: string | null
+          subscription_package_id?: string | null
+          subscription_start?: string | null
           updated_at?: string
         }
         Update: {
@@ -87,9 +95,21 @@ export type Database = {
           staff_email?: string | null
           staff_password?: string | null
           staff_user_id?: string | null
+          status?: string
+          subscription_end?: string | null
+          subscription_package_id?: string | null
+          subscription_start?: string | null
           updated_at?: string
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "hotels_subscription_package_id_fkey"
+            columns: ["subscription_package_id"]
+            isOneToOne: false
+            referencedRelation: "subscription_packages"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       invoices: {
         Row: {
@@ -413,6 +433,42 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      subscription_packages: {
+        Row: {
+          created_at: string
+          description: string | null
+          duration_days: number
+          features: string[] | null
+          id: string
+          is_active: boolean
+          name: string
+          price: number
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          duration_days?: number
+          features?: string[] | null
+          id?: string
+          is_active?: boolean
+          name: string
+          price?: number
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          duration_days?: number
+          features?: string[] | null
+          id?: string
+          is_active?: boolean
+          name?: string
+          price?: number
+          updated_at?: string
+        }
+        Relationships: []
       }
       user_roles: {
         Row: {

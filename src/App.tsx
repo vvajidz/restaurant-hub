@@ -32,6 +32,8 @@ import StaffKitchen from "./pages/staff/Kitchen";
 
 // Superadmin Pages
 import SuperadminDashboard from "./pages/superadmin/Dashboard";
+import SuperadminPackages from "./pages/superadmin/Packages";
+import SuperadminUsers from "./pages/superadmin/Users";
 
 const queryClient = new QueryClient();
 
@@ -58,6 +60,8 @@ const App = () => (
           >
             <Route index element={<Navigate to={ROUTES.SUPERADMIN.DASHBOARD} replace />} />
             <Route path="dashboard" element={<SuperadminDashboard />} />
+            <Route path="packages" element={<SuperadminPackages />} />
+            <Route path="users" element={<SuperadminUsers />} />
           </Route>
 
           {/* Admin Routes */}

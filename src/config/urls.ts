@@ -7,6 +7,8 @@ export const ROUTES = {
   // Superadmin routes
   SUPERADMIN: {
     DASHBOARD: '/superadmin/dashboard',
+    PACKAGES: '/superadmin/packages',
+    USERS: '/superadmin/users',
   },
 
   // Admin routes

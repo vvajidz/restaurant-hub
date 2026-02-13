@@ -1,6 +1,6 @@
 // Core types for the restaurant management system
 
-export type UserRole = 'admin' | 'staff';
+export type UserRole = 'admin' | 'staff' | 'superadmin';
 
 export interface User {
   id: string;

@@ -15,6 +15,7 @@ import NotFound from "./pages/NotFound";
 // Layouts
 import AdminLayout from "./layouts/AdminLayout";
 import StaffLayout from "./layouts/StaffLayout";
+import SuperadminLayout from "./layouts/SuperadminLayout";
 
 // Admin Pages
 import AdminDashboard from "./pages/admin/Dashboard";
@@ -29,6 +30,9 @@ import StaffFood from "./pages/staff/Food";
 import StaffSeating from "./pages/staff/Seating";
 import StaffKitchen from "./pages/staff/Kitchen";
 
+// Superadmin Pages
+import SuperadminDashboard from "./pages/superadmin/Dashboard";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -42,6 +46,19 @@ const App = () => (
           <Route path="/" element={<Landing />} />
           <Route path={ROUTES.LOGIN} element={<Login />} />
           <Route path="/register" element={<Register />} />
+
+          {/* Superadmin Routes */}
+          <Route
+            path="/superadmin"
+            element={
+              <ProtectedRoute allowedRoles={['superadmin']}>
+                <SuperadminLayout />
+              </ProtectedRoute>
+            }
+          >
+            <Route index element={<Navigate to={ROUTES.SUPERADMIN.DASHBOARD} replace />} />
+            <Route path="dashboard" element={<SuperadminDashboard />} />
+          </Route>
 
           {/* Admin Routes */}
           <Route

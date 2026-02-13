@@ -1,1 +1,7 @@
 project_id = "xqplefhiycrfeodsttwi"
+
+[functions.register-hotel]
+verify_jwt = false
+
+[functions.seed-data]
+verify_jwt = false
